@@ -99,7 +99,8 @@ def movies_with_directors_set(source)
           moviehash = Hash.new
           moviehash[:title] = source[index][:movies][innerindex]
           moviehash[:director_name] = director
-          moviehash[:studio] = source[index][:movies]
+          moviehash[:studio] = source[index][:movies][innerindex][:studio]
+          moviehash
           moviearray << moviehash
           output << moviearray
           innerindex += 1
